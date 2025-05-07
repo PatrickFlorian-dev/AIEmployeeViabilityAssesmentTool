@@ -1,4 +1,4 @@
- 
+   
 # Ai Employee Success Viability Predictive Assesment Tool 
 
 #
@@ -139,3 +139,77 @@ Models are saved as `.h5` files and uploaded to an S3 bucket. The system support
 | epochs | `integer` | Number of training epochs
 | fine_tune | `boolean` | Use previous weights
 
+# 🧪 Getting Started
+
+## Prerequisites
+
+- Python 3.8+ (If you don't have python installed or an older version and if you neveer used anaconda or miniconda I sugguest you use miniconda)
+- PostgreSQL (or SQLite for testing)
+- MinIO for model versioning (Will add AWS S3 endpoint in next version you can get a free version with a credit card) 
+- Docker desktop (Or you can just have docker CLI installed) 
+
+## Enviornemnt setup 
+Bash >>
+```
+pip install -r requirements.txt
+```
+
+## Create an `.env` file in the project root
+```
+DATABASE_URL=postgresql://user:pass@localhost/db
+AWS_KEY=your_key
+AWS_SECRET=your_secret
+AWS_ENDPOINT=http://localhost:9000
+```
+
+## Build the docker container and run the app 
+
+#### Build and run the container 
+```
+docker-compose down -v && docker-compose up --build
+```
+
+### _The terminal wlll state the app is running, then you can go to docker desktop and see the 3 containers automatically created for you (below)._
+
+
+## There will be 3 URLS you can access 
+Flask API ``http://localhost:5000`` # Base route takes you to the swagger 
+MiniO UI ``http://localhost:9001`` # MiniO alternative S3 free storage (local) 
+PostGres ``Ports - 5432:5432`` # This isn't a link instead just a container for Postgres 
+
+## (Optional using DBeaver)
+Download DBeaver and select create new database. Just use the default settings and the only thing you will need is the username and password you used to create the .env file. The host option and port stay the same. Once the docker is built this should generate the employee table and other tables in your local database. 
+
+## 📊 Clustering (Alternative Scoring)
+
+The app also supports an optional success scoring method using **KMeans clustering**. This unsupervised approach groups employees based on selected features, useful for exploratory analysis or pre-model evaluation.
+
+### Features used for clustering:
+- `years_experience`
+- `different_industries_worked_in`
+- `has_leadership_experience`
+- `largest_company_size_worked_at`
+
+---
+
+## 💡 Future Enhancements
+
+- 🔍 Integrate model explainability tools (e.g., SHAP)
+- 📈 Add a dashboard UI for visualizing predictions
+- 🔁 Implement real-time inference using Kafka or Celery
+- ✅ Automate model retraining via CI/CD pipelines
+
+---
+
+## 🛠️ Tech Stack
+
+| Component     | Technology             |
+|---------------|------------------------|
+| Web API       | Flask + Flask-RESTx    |
+| ORM / Database| SQLAlchemy + PostgreSQL|
+| ML / Modeling | TensorFlow + Keras     |
+| Preprocessing | scikit-learn           |
+| Storage       | AWS S3 / MinIO         |
+| Dev Tools     | Faker, Pandas, Boto3, docker  |
+
+### More updates and documentation coming soon. 
