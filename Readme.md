@@ -139,6 +139,9 @@ Models are saved as `.h5` files and uploaded to an S3 bucket. The system support
 | epochs | `integer` | Number of training epochs
 | fine_tune | `boolean` | Use previous weights
 
+<img width="1502" alt="Screenshot 2025-05-07 at 5 31 07 PM" src="https://github.com/user-attachments/assets/a21ccc96-212c-4d8b-8539-0a274bcb2268" />
+
+
 # 🧪 Getting Started
 
 ## Prerequisites
