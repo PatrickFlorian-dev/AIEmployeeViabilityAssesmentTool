@@ -1,13 +1,9 @@
    
 # Ai Employee Success Viability Predictive Assesment Tool 
 
-#
 ---
 
 ##### _Description: This project is an end-to-end machine learning application built using Python, TensorFlow, SQLAlchemy, Flask-RESTx, and supporting tools. It simulates the prediction of employee success scores based on synthetic data and demonstrates core ML engineering principles such as data generation, model training, evaluation, retraining, and versioning._ 
-
-#
-#
    
 ---
    
