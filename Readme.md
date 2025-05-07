@@ -170,7 +170,7 @@ docker-compose down -v && docker-compose up --build
 ```
 
 ### _The terminal wlll state the app is running, then you can go to docker desktop and see the 3 containers automatically created for you (below)._
-
+<img width="1500" alt="Screenshot 2025-05-07 at 5 25 18 PM" src="https://github.com/user-attachments/assets/a09f233f-0019-44c7-aa80-62360bdb1377" />
 
 ## There will be 3 URLS you can access 
 Flask API ``http://localhost:5000`` # Base route takes you to the swagger 
@@ -179,6 +179,8 @@ PostGres ``Ports - 5432:5432`` # This isn't a link instead just a container for 
 
 ## (Optional using DBeaver)
 Download DBeaver and select create new database. Just use the default settings and the only thing you will need is the username and password you used to create the .env file. The host option and port stay the same. Once the docker is built this should generate the employee table and other tables in your local database. 
+<img width="229" alt="Screenshot 2025-05-07 at 5 29 03 PM" src="https://github.com/user-attachments/assets/a6c2d22e-51d8-4a22-a62e-e9556b8a9ff9" />
+
 
 ## 📊 Clustering (Alternative Scoring)
 
